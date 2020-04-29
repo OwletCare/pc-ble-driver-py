@@ -258,7 +258,7 @@ class BLEAdapter(BLEDriverObserver):
 
         while True:
             response = self.evt_sync[conn_handle].wait(
-                evt=BLEEvtID.gattc_evt_prim_srvc_disc_rsp
+                evt=BLEEvtID.gattc_evt_prim_srvc_disc_rsp, timeout=30
             )
 
             if response["status"] == BLEGattStatusCode.success:
